@@ -73,8 +73,9 @@ class TestCommand extends Command
     private function createNewStub($subject = null)
     {
         $stub = new Stub($subject);
-        $stub->registerStubMatcher(new Matcher\ShouldReturnMatcher);
-        $stub->registerStubMatcher(new Matcher\ShouldContainMatcher);
+        $stub->registerStubMatcher(new Matcher\ComparisonOperatorMatcher);
+        $stub->registerStubMatcher(new Matcher\IdentityOperatorMatcher);
+        $stub->registerStubMatcher(new Matcher\CountMatcher);
 
         return $stub;
     }
