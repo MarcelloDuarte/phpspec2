@@ -212,7 +212,7 @@ class Tester
 
     private function specContainsFilteredExamples(array $examples)
     {
-        if (self::RUN_ALL !== $this->runOnly) {
+        if (self::RUN_ALL === $this->runOnly) {
             return true;
         }
 
